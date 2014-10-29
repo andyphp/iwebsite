@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.iwebsite.cc$ 
+RewriteRule ^(.*)$ http://iwebsite.cc/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+
+ErrorDocument 404 /error.html
+</IfModule>

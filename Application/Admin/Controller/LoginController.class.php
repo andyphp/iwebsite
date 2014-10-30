@@ -27,15 +27,20 @@ use Think\Controller;
 					$ip = get_client_ip(); 
 					$ipx = $this -> getCity($ip);
 
+					if (!$ipx) {
+						$ipx = 0;
+					}
+
 					$log = M('log');
 					$data['address'] = $ipx;
 					$data['date'] = time();
+					$data['ip'] = $ip;
 					$log -> add($data);
 
 					$this -> redirect('Index/index');
 				}
  			}else{
- 				$this -> error('验证码错误');
+ 				$this -> error('验证码错误',U('index'));
  			}
  		}else{
  			$this -> error('非法操作');
@@ -56,7 +61,7 @@ use Think\Controller;
  	//验证码
  	public function verify() {
  		$verify = new \Think\Verify();
-        		$verify -> entry(1);     //验证码ID:1
+        $verify -> entry(1);     //验证码ID:1
  	}
  }
 

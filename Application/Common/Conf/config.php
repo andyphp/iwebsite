@@ -18,7 +18,7 @@ return array(
 	'DB_PORT' => '3306', // 端口
 	'DB_NAME' => 'iwebsite', // 数据库名
 	'DB_USER' => 'root',  // 用户名
-	'DB_PWD' => '',  // 密码
+	'DB_PWD' => 'liuhongyi',  // 密码
 	'DB_PREFIX' => 'iwebsite_',  // 数据库表前缀 
 
 	// 系统信息

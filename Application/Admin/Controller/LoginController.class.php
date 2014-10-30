@@ -25,14 +25,10 @@ use Think\Controller;
 					session('uid',$user['id']);
 					// 存储IP信息
 					$ip = get_client_ip(); 
-					if ($ip == '127.0.01') {
-						$ip = 'localhost'; 
-					}else {
-						$ip = $this -> getCity($ip);
-					}
+					$ipx = $this -> getCity($ip);
 
 					$log = M('log');
-					$data['address'] = '';
+					$data['address'] = $ipx;
 					$data['date'] = time();
 					$log -> add($data);
 
@@ -51,7 +47,7 @@ use Think\Controller;
 	$url = "http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
 	$ip = json_decode(file_get_contents($url));
 	if((string)$ip -> code == '1') {
-		return '数据异常';
+		return false;
 	}
 	$data = (array)$ip -> data;
 		return $data['region'].$data['city'];

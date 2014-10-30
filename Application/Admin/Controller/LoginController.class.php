@@ -16,26 +16,51 @@ use Think\Controller;
  	public function login($username = null,$password = null,$verify = null) {
  		if (IS_POST) {
  			if (check_verify($verify)) {
- 				$User = M('user');
- 				$user = $db->where(array('username' => I('post.username')))->find();
- 				if (!$user || $user['password'] != I('post.password','','md5')) {
-					$this->error('帐号或密码错误！');
+ 				$sql = M('user');
+ 				$user = $sql -> where(array('username' => I('post.username'))) -> find();
+ 				if (!$user || $user['userpassword'] != I('post.password','','md5')) {
+					$this -> error('帐号或密码错误！');
 				}else{
+					// 存储session数据
 					session('uid',$user['id']);
-					$this->redirect('Index/index');
+					// 存储IP信息
+					$ip = get_client_ip(); 
+					if ($ip == '127.0.01') {
+						$ip = 'localhost'; 
+					}else {
+						$ip = $this -> getCity($ip);
+					}
+
+					$log = M('log');
+					$data['address'] = '';
+					$data['date'] = time();
+					$log -> add($data);
+
+					$this -> redirect('Index/index');
 				}
  			}else{
- 				$this->error('验证码错误');
+ 				$this -> error('验证码错误');
  			}
  		}else{
- 			$this->error('非法操作');
+ 			$this -> error('非法操作');
  		}
  	}
+
+ 	// 获取IP
+	public function getCity($ip) {
+	$url = "http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+	$ip = json_decode(file_get_contents($url));
+	if((string)$ip -> code == '1') {
+		return '数据异常';
+	}
+	$data = (array)$ip -> data;
+		return $data['region'].$data['city'];
+	}
 
  	//验证码
  	public function verify() {
  		$verify = new \Think\Verify();
-        		$verify->entry(1);     //验证码ID:1
+        		$verify -> entry(1);     //验证码ID:1
  	}
  }
 

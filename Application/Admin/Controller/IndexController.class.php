@@ -18,7 +18,6 @@ class IndexController extends AdminController {
 		$gbooklist = $gbook -> field('title,date') -> limit(10) -> select();
 		$this -> assign('gbooklist',$gbooklist);
 
-		$this -> indexactive = 'active';
 		$this -> display();
 	}
 

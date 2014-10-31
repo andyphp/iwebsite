@@ -1,48 +1,52 @@
 <include file='Common:head' />
-<section class="container-fulid">
-	<div class="top text-center">
-		<h2><span class="font-en">Hello</span>，欢迎来到<span class="font-en">iwebsite</span>后台管理系统</h2>
-		<p>
-			这是一个开源的免费项目，你可以自由二次开发，如果你想参与我的项目开发或者获取最新版本的项目源码，请访问 <a href="https://github.com/liuhongyi/iwebsite" class="text-primary">iwebsite项目源码</a>
-		</p>
-	</div>
-</section>
-<section class="container-fulid">
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-cogs"></i>系统信息</h5>
-			<ul class="list-unstyled">
-				<li>系统版本：<span class="font-en">{$Think.config.iwebsite_version}</span></li>
-				<li>开发者：{$Think.config.iwebsite_devoloper}</li>
-				<li>BUG反馈：531271788@qq.com</li>
-				<li>授权信息：{$Think.config.iwebsite_empower}</li>
-				<li>版权所有：<a href="http://www.iwebsite.cc" target="_blank" class="font-en font-14 text-primary">{$Think.config.iwebsite_copy}</a></li>
-			</ul>
+
+<div id="show-content">
+	<section class="container-fulid">
+		<div class="top text-center">
+			<h2><span class="font-en">Hello</span>，欢迎来到<span class="font-en">iwebsite</span>后台管理系统</h2>
+			<p>
+				这是一个开源的免费项目，你可以自由二次开发，如果你想参与我的项目开发或者获取最新版本的项目源码，请访问 <a href="https://github.com/liuhongyi/iwebsite" class="text-primary">iwebsite项目源码</a>
+			</p>
 		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-comments"></i>留言反馈</h5>
-			<ul class="list-unstyled">
-				<foreach name="gbooklist" item="gbook">
-					<li><a href="#">{$gbook.title} &nbsp;&nbsp;&nbsp;&nbsp; {$gbook.date|date='Y-m-d H:i',###}</a></li>
-				</foreach>
-			</ul>
+	</section>
+	<section class="container-fulid">
+		<div class="col-sm-4">
+			<div class="well-white">
+				<h5><i class="fa fa-cogs"></i>系统信息</h5>
+				<ul class="list-unstyled">
+					<li>系统版本：<span class="font-en">{$Think.config.iwebsite_version}</span></li>
+					<li>开发者：{$Think.config.iwebsite_devoloper}</li>
+					<li>BUG反馈：531271788@qq.com</li>
+					<li>授权信息：{$Think.config.iwebsite_empower}</li>
+					<li>版权所有：<a href="http://www.iwebsite.cc" target="_blank" class="font-en font-14 text-primary">{$Think.config.iwebsite_copy}</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-shield"></i>登录信息</h5>
-			<ul class="list-unstyled">
-				<foreach name="loglist" item="log">
-					<if condition="$log.address eq 0">
-					<li>地址：本地登陆 &nbsp;&nbsp;&nbsp;&nbsp; IP：127.0.0.1 &nbsp;&nbsp;&nbsp;&nbsp; 日期：{$log.date|date='Y-m-d H:i:s',###}</li>
-					<else />
-					<li>地址：{$log.address} &nbsp;&nbsp;&nbsp;&nbsp; IP：{$log.ip} &nbsp;&nbsp;&nbsp;&nbsp; 日期：{$log.date|date='Y-m-d H:i:s',###}</li>
-					</if>
-				</foreach>
-			</ul>
+		<div class="col-sm-4">
+			<div class="well-white">
+				<h5><i class="fa fa-comments"></i>留言反馈</h5>
+				<ul class="list-unstyled">
+					<foreach name="gbooklist" item="gbook">
+						<li><a href="#">{$gbook.title} &nbsp;&nbsp;&nbsp;&nbsp; {$gbook.date|date='Y-m-d H:i',###}</a></li>
+					</foreach>
+				</ul>
+			</div>
 		</div>
-	</div>
-</section>
+		<div class="col-sm-4">
+			<div class="well-white">
+				<h5><i class="fa fa-shield"></i>登录信息</h5>
+				<ul class="list-unstyled">
+					<foreach name="loglist" item="log">
+						<if condition="$log.address eq 0">
+						<li>地址：本地登陆 &nbsp;&nbsp;&nbsp;&nbsp; IP：127.0.0.1 &nbsp;&nbsp;&nbsp;&nbsp; 日期：{$log.date|date='Y-m-d H:i:s',###}</li>
+						<else />
+						<li>地址：{$log.address} &nbsp;&nbsp;&nbsp;&nbsp; IP：{$log.ip} &nbsp;&nbsp;&nbsp;&nbsp; 日期：{$log.date|date='Y-m-d H:i:s',###}</li>
+						</if>
+					</foreach>
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>
+
 <include file='Common:foot' />

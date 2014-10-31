@@ -26,13 +26,18 @@ a:hover{color: #007AFF}
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 	border: 0;
 }
-.navbar ul li:hover{background: #E7E7E7;}
-
 .navbar-nav i {
 	margin-right: 10px;
 }
+.navbar-nav li:hover{background: #E7E7E7}
 
 .well-white{background: #fff;padding:20px;line-height: 24px;overflow: hidden;}
 .well-white i{margin-right: 10px;}
 
 .top{margin:20px 15px;background: #fff;padding:20px 30px;}
+
+.nav-left a{border:0 none;}
+.nav-left a i{margin-right: 15px;}
+.nav-left a.disabled{background: #E8E8E8;font-size: 14px;font-weight: 400;}
+.nav-left a.disabled:hover{background: #fff;}
+a.list-group-item:hover{background: #E8E8E8;}

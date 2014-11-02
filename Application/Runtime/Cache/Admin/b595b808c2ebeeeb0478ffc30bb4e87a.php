@@ -84,11 +84,8 @@
 		</div>
 	</section>
 </div>
-
-
 <script src="/iwebsite/CDN/js/jquery.min.js"></script>
 <script src="/iwebsite/CDN/js/bootstrap.min.js"></script>
-<script src="/iwebsite/CDN/js/bootstrap-tooltip.js"></script>
 <script src="/iwebsite/Application/Admin/Public/js/theme.js"></script>
 </body>
 </html>

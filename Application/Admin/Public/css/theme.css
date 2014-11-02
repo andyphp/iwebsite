@@ -8,6 +8,8 @@ body {
 	font-size: 12px;
 }
 
+.white{background: #fff;overflow: hidden;}
+
 .font-en{font-family: "Lato", sans-serif !important;}
 .font-14{font-size: 14px;}
 
@@ -36,8 +38,34 @@ a:hover{color: #007AFF}
 
 .top{margin:20px 15px;background: #fff;padding:20px 30px;}
 
-.nav-left a{border:0 none;}
-.nav-left a i{margin-right: 15px;}
-.nav-left a.disabled{background: #E8E8E8;font-size: 14px;font-weight: 400;}
-.nav-left a.disabled:hover{background: #fff;}
-a.list-group-item:hover{background: #E8E8E8;}
+.main {overflow: hidden;}
+.main h5{margin-top: 20px;margin-left: 15px;margin-bottom: 20px;}
+.main a i{margin-right: 5px;}
+.main table input{height: 20px;line-height: 20px;width: 70px;}
+
+
+/*button*/
+.btn-default-outline, .btn-primary-outline, .btn-success-outline, .btn-info-outline, .btn-warning-outline, .btn-danger-outline {
+  background: transparent; }
+
+.btn-default-outline {
+  color: #999999;
+  border: 1px solid #bbbbbb; }
+  .btn-default-outline .caret {
+    border-top-color: #bbbbbb; }
+  .btn-default-outline:hover, .btn-default-outline.active {
+    background: #bbbbbb;
+    color: white; }
+    .btn-default-outline:hover .caret, .btn-default-outline.active .caret {
+      border-top-color: white; }
+
+.btn-primary-outline {
+  color: #007aff;
+  border: 1px solid #007aff; }
+  .btn-primary-outline .caret {
+    border-top-color: #007aff; }
+  .btn-primary-outline:hover, .btn-primary-outline.active {
+    background: #007aff;
+    color: white; }
+    .btn-primary-outline:hover .caret, .btn-primary-outline.active .caret {
+      border-top-color: white; }

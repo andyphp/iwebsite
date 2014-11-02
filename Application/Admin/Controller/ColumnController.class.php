@@ -10,6 +10,11 @@ class ColumnController extends AdminController {
 	public function index() {
 		$this -> display();
 	}
+
+	// 添加栏目
+	public function addColumn() {
+		$this -> show('2');
+	}
 }
 
 ?>

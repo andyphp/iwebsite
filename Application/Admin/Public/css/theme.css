@@ -9,7 +9,7 @@ body {
 }
 
 .white{background: #fff;overflow: hidden;}
-
+.red{color: #ff0000}
 .font-en{font-family: "Lato", sans-serif !important;}
 .font-14{font-size: 14px;}
 
@@ -38,10 +38,11 @@ a:hover{color: #007AFF}
 
 .top{margin:20px 15px;background: #fff;padding:20px 30px;}
 
-.main {overflow: hidden;}
-.main h5{margin-top: 20px;margin-left: 15px;margin-bottom: 20px;}
+.main {overflow: hidden;padding:15px;}
+.main h5{margin-top: 20px;margin-bottom: 20px;}
 .main a i{margin-right: 5px;}
-.main table input{height: 20px;line-height: 20px;width: 70px;}
+.main table tr td{line-height: 25px;}
+.main table input{height: 25px;line-height: 25px;width: 70px;}
 
 
 /*button*/

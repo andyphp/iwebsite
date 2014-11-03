@@ -61,7 +61,13 @@ use Think\Controller;
  	//验证码
  	public function verify() {
  		$verify = new \Think\Verify();
-        $verify -> entry(1);     //验证码ID:1
+		$verify -> entry(1);     //验证码ID:1
+ 	}
+
+ 	// 安全退出
+ 	public function logout() {
+ 		session('[destroy]'); 
+ 		$this->success('安全退出！', U('index'));
  	}
  }
 

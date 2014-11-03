@@ -16,18 +16,22 @@
 		<div class="login-container">
 			<a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#119;&#119;&#119;&#46;&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;&#46;&#99;&#99;" class="text-primary"><i class="fa fa-cloud"></i>&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;</a>
 			<form action="{:U('login')}" method="post">
-				<div class="form-group">
-					<input class="form-control" placeholder="Username" type="text" id="username" name="username">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input type="text" class="form-control" name="username" placeholder="Username">
 				</div>
-				<div class="form-group">
-					<input class="form-control" placeholder="Password" type="password" id="password" name="password">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input type="text" class="form-control" name="password" placeholder="Password">
 				</div>
-				<div class="form-group">
-					<input class="form-control" placeholder="verify" type="text" name="verify">
-					<input type="submit" id="submit" value="&#xf054;">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input type="text" class="form-control" name="verify" placeholder="verify">
 				</div>
 				<img onclick="this.src='{:U('verify')}?'+Math.random()" alt="点击切换" src="{:U('verify')}">
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Log in">
 				<div class="copy">&#67;&#111;&#112;&#121;&#114;&#105;&#103;&#104;&#116; &copy; &#50;&#48;&#49;&#52; <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#119;&#119;&#119;&#46;&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;&#46;&#99;&#99;">&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;</a></div>
+
 			</form>
 		</div>
 	</div>

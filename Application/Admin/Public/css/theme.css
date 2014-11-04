@@ -41,8 +41,8 @@ a:hover{color: #007AFF}
 .main {overflow: hidden;padding:15px;}
 .main h5{margin-top: 20px;margin-bottom: 20px;}
 .main a i{margin-right: 5px;}
-.main table tr td{line-height: 25px;}
-.main table input{height: 25px;line-height: 25px;width: 70px;}
+.main table tr td{line-height: 35px;height: 35px;}
+.main table input{height: 35px;line-height: 35px;width: 70px;}
 
 
 /*button*/
@@ -70,3 +70,63 @@ a:hover{color: #007AFF}
     color: white; }
     .btn-primary-outline:hover .caret, .btn-primary-outline.active .caret {
       border-top-color: white; }
+
+
+.dataTable th {
+  padding-right: 20px;
+  position: relative;
+  font-weight: normal; }
+  .dataTable th.sorting {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting:after, .dataTable th.sorting:before {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+    .dataTable th.sorting:after {
+      top: 19px;
+      border-top: 5px solid #007aff !important; }
+    .dataTable th.sorting:before {
+      top: 11px;
+      border-bottom: 5px solid #007aff !important; }
+  .dataTable th.sorting_asc {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting_asc:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 15px;
+      border-bottom: 5px solid #007aff !important;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+  .dataTable th.sorting_desc {
+    color: #007aff;
+    cursor: pointer; }
+    .dataTable th.sorting_desc:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 15px;
+      border-top: 5px solid #007aff !important;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent; }
+
+label {
+    font-weight: normal;
+}
+.icon-edit{}
+.icon-edit a{margin:0 5px;cursor: pointer;}
+.icon-edit a i{font-size: 14px;}
+
+.nav-left{}
+.nav-left ul li a{background: #fff;display: block;height: 40px;line-height: 40px;overflow: hidden;padding: 0 30px;text-decoration: none;text-align: right;border-right: 3px solid #E8E8E8;}
+.nav-left ul li a:hover{background: #E8E8E8;color: #000;border-right: 3px solid #007AFF;}

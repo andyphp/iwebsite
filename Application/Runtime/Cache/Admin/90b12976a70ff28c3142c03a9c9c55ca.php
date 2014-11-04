@@ -1,14 +1,60 @@
-<?php if (!defined('THINK_PATH')) exit();?><link rel="stylesheet" href="/iwebsite/CDN/css/datatables.css">
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;&#45;&#21518;&#21488;&#31649;&#29702;&#31995;&#32479;</title>
+	<link rel="stylesheet" href="/iwebsite/CDN/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/iwebsite/CDN/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/iwebsite/CDN/css/datatables.css">
+	<link rel="stylesheet" href="/iwebsite/Application/Admin/Public/css/theme.css">
+	<script src="/iwebsite/CDN/js/jquery.min.js"></script>
+	<script src="/iwebsite/Application/Admin/Public/js/load.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<!-- 手机界面导航 -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand font-en" href="<?php echo U('Index/index');?>">iwebsite</a>
+		</div>
+
+		<!-- 栏目导航 -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="<?php echo ($index_active); ?>"><a href="<?php echo U('Index/index');?>">首页</a></li>
+				<li><a href="<?php echo U('/Content');?>">内容管理</a></li>
+				<li><a href="<?php echo U('/Page');?>">单页管理</a></li>
+				<li class="<?php echo ($column_active); ?>"><a href="<?php echo U('Column/index');?>">栏目管理</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="<?php echo U('Info/index');?>" class="font-en"><i class="fa fa-user"></i>Administrator</a></li>
+				<li><a href="<?php echo U('/Index/index');?>"><i class="fa fa-home"></i>网站首页</a></li>
+				<li><a href="<?php echo U('Login/logout');?>"><i class="fa fa-sign-out"></i>退出</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
 <section class="container-fulid white main">
   	<h5><a data-toggle="modal" data-target="#myColumn" class="btn btn-primary-outline"><i class="fa fa-plus"></i>添加栏目</a></h5>
   	<table class="table table-bordered table-striped dataTable" id="tables" width="100%" cellspacing="0">
 		<thead>
 			<tr>
-			<th>ID</th>
-			<th>栏目名称</th>
-			<th>状态</th>
-			<th>排序</th>
-			<th>操作</th>
+				<th>ID</th>
+				<th>栏目名称</th>
+				<th>状态</th>
+				<th>排序</th>
+				<th>操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -18,13 +64,15 @@
 				<td>
 					<?php if($column["state"] == 1): ?>显示<?php else: ?><span class="red">隐藏</span><?php endif; ?>
 				</td>
-				<td><input type="text" class="form-control" value="<?php echo ($column["sort"]); ?>"></td>
-				<td><a href="#" class="tip-top" title="修改">修改</a> | <a href="#" class="tip-top" title="删除">删除</a></td>
+				<td><?php echo ($column["sort"]); ?></td>
+				<td class="icon-edit">
+					<a href="<?php echo U('Column/editColumn');?>" class="tip-top" title="修改"><i class="fa fa-pencil"></i></a>
+					<a href="#" class="tip-top" title="删除"><i class="fa fa-trash"></i></a>
+				</td>
 			</tr><?php endforeach; endif; ?>
 		</tbody>
 	</table>
 </section>
-
 
 <!-- 添加栏目 -->
 <div class="modal fade" id="myColumn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -80,21 +128,11 @@
 		</div>
 	</div>
 </div>
+
+
+<script src="/iwebsite/CDN/js/bootstrap.min.js"></script>
 <script src="/iwebsite/CDN/js/bootstrap-tooltip.js"></script>
 <script src="/iwebsite/CDN/js/jquery.dataTables.min.js"></script>
-<script>
-	$(function() {
-		$('.tip-top').tooltip({
-			placement:'top',
-		})
-		$('#tables').dataTable();
-		// 表单验证
-		$('#add-submit').click(function(){
-			var name = $('input[name=name]');
-			if (name.val() == '') {
-				name.focus();
-				return false;
-			};			
-		})
-	})
-</script>
+<script src="/iwebsite/Application/Admin/Public/js/theme.js"></script>
+</body>
+</html>

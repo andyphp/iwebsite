@@ -8,6 +8,7 @@ class IndexController extends AdminController {
 
 	// 后台首页
 	public function index() {
+		$this -> index_active = 'active';
 		// 登录日志
 		$log = M('log');
 		$loglist = $log -> limit(10) -> select();

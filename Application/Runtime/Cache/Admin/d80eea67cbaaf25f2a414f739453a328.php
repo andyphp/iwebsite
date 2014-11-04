@@ -45,44 +45,59 @@
 	</div>
 </nav>
 
-<section class="container-fulid">
-	<div class="top text-center">
-		<h2><span class="font-en">Hello</span>，欢迎来到<span class="font-en">iwebsite</span>后台管理系统</h2>
-		<p>
-			这是一个开源的免费项目，你可以自由二次开发，如果你想参与我的项目开发或者获取最新版本的项目源码，请访问 <a href="https://github.com/liuhongyi/iwebsite" class="text-primary">iwebsite项目源码</a>
-		</p>
+<section class="col-sm-2">
+	<div class="nav-left">
+		<ul class="list-unstyled">
+			<li><a><i class="fa fa-align-right"></i></a></li>
+			<li><a href="#">删除该栏目</a></li>
+		</ul>
 	</div>
 </section>
-<section class="container-fulid">
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-cogs"></i>系统信息</h5>
-			<ul class="list-unstyled">
-				<li>系统版本：<span class="font-en"><?php echo (C("iwebsite_version")); ?></span></li>
-				<li>开发者：<?php echo (C("iwebsite_devoloper")); ?></li>
-				<li>BUG反馈：531271788@qq.com</li>
-				<li>授权信息：<?php echo (C("iwebsite_empower")); ?></li>
-				<li>版权所有：<a href="http://www.iwebsite.cc" target="_blank" class="font-en font-14 text-primary"><?php echo (C("iwebsite_copy")); ?></a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-comments"></i>留言反馈</h5>
-			<ul class="list-unstyled">
-				<?php if(is_array($gbooklist)): foreach($gbooklist as $key=>$gbook): ?><li><a href="#"><?php echo ($gbook["title"]); ?> &nbsp;&nbsp;&nbsp;&nbsp; <?php echo (date('Y-m-d H:i',$gbook["date"])); ?></a></li><?php endforeach; endif; ?>
-			</ul>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="well-white">
-			<h5><i class="fa fa-shield"></i>登录信息</h5>
-			<ul class="list-unstyled">
-				<?php if(is_array($loglist)): foreach($loglist as $key=>$log): if($log["address"] == 0): ?><li>地址：本地登陆 &nbsp;&nbsp;&nbsp;&nbsp; IP：127.0.0.1 &nbsp;&nbsp;&nbsp;&nbsp; 日期：<?php echo (date('Y-m-d H:i:s',$log["date"])); ?></li>
-					<?php else: ?>
-					<li>地址：<?php echo ($log["address"]); ?> &nbsp;&nbsp;&nbsp;&nbsp; IP：<?php echo ($log["ip"]); ?> &nbsp;&nbsp;&nbsp;&nbsp; 日期：<?php echo (date('Y-m-d H:i:s',$log["date"])); ?></li><?php endif; endforeach; endif; ?>
-			</ul>
-		</div>
+<section class="col-sm-10">
+	<div class="well-white">
+	  	<form class="form-horizontal" role="form" action="<?php echo U('addColumn');?>" method="post">
+			<div class="modal-body">				
+				<div class="form-group">
+					<label for="name" class="col-sm-2 control-label">栏目名称</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" name="name" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="list_type" class="col-sm-2 control-label">列表页模版</label>
+					<div class="col-sm-10">
+						<select name="list_type" class="form-control">
+							<option value="list.html">list.html</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content_type" class="col-sm-2 control-label">内容页模版</label>
+					<div class="col-sm-10">
+						<select name="content_type" class="form-control">
+							<option value="content.html">content.html</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="sort" class="col-sm-2 control-label">排序</label>
+					<div class="col-sm-10">
+						<input type="text" name="sort" value="10" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">状态</label>
+					<div class="col-sm-10">
+						<label class="radio-inline"><input name="state" type="radio" value="1" checked="checked"><span>显示</span></label>
+						<label class="radio-inline"><input name="state" type="radio" value="0"><span>隐藏</span></label>
+					</div>
+				</div>	
+			</div>
+			<div class="modal-footer">
+				<a href="<?php echo U('index');?>" class="btn btn-default-outline">返回</a>
+				<button type="submit" id="add-submit" class="btn btn-primary-outline">保存</button>
+			</div>
+		</form>
 	</div>
 </section>
 

@@ -4,8 +4,11 @@
 	<meta charset="UTF-8">
 	<title>&#105;&#119;&#101;&#98;&#115;&#105;&#116;&#101;&#45;&#21518;&#21488;&#31649;&#29702;&#31995;&#32479;</title>
 	<link rel="stylesheet" href="__CDNCSS__/bootstrap.min.css">
-	<link rel="stylesheet" href="__CSS__/theme.css">
 	<link rel="stylesheet" href="__CDNCSS__/font-awesome.min.css">
+	<link rel="stylesheet" href="__CDNCSS__/datatables.css">
+	<link rel="stylesheet" href="__CSS__/theme.css">
+	<script src="__CDNJS__/jquery.min.js"></script>
+	<script src="__JS__/load.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -28,10 +31,10 @@
 		<!-- 栏目导航 -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="{:U('Index/index')}">首页</a></li>
+				<li class="{$index_active}"><a href="{:U('Index/index')}">首页</a></li>
 				<li><a href="{:U('/Content')}">内容管理</a></li>
 				<li><a href="{:U('/Page')}">单页管理</a></li>
-				<li><a href="javascript:request('{:U('Column/index')}')">栏目管理</a></li>
+				<li class="{$column_active}"><a href="{:U('Column/index')}">栏目管理</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="{:U('Info/index')}" class="font-en"><i class="fa fa-user"></i>Administrator</a></li>

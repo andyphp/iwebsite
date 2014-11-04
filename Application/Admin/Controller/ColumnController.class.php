@@ -8,9 +8,16 @@ class ColumnController extends AdminController {
 
 	// 栏目列表
 	public function index() {
+		$this -> column_active = 'active';
+
+
 		$column = M('column');
-		$list = $column -> order(array('sort','id ASC')) -> select(); 
+		$list = $column -> select(); 
 		$this -> assign('list',$list);
+		
+		$file1 = glob('Application/Home/View/Tpl/*.html');  //匹配文件
+		print_r($file1);
+
 		$this -> display();
 	}
 
@@ -24,10 +31,16 @@ class ColumnController extends AdminController {
 		$data['state'] = I('post.state');
 		$column -> add($data);
 		if ($column) {
-			$this -> success('添加成功',U('/Column/index'));
+			$this -> success('添加成功');
 		}else {
-			$this -> error('添加失败',U('/Column/index'));
+			$this -> error('添加失败');
 		}
+	}
+
+	// 修改栏目
+	public function editColumn() {
+		$this -> column_active = 'active';
+		$this -> display();
 	}
 }
 
